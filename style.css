@@ -24,29 +24,27 @@ body div {
 	opacity: 0;
 }
 
-#lrrr {
+.quote{
+	font-style: oblique;
+}
+.lrrr {
 	color: #ffb347;
-	font-style: oblique;
 }
 
-#azura{
+.azura{
 	color: #b666d2;;
-	font-style: oblique;
 }
 
-#torryn{
+.torryn{
 	color: #4169e1;;
-	font-style: oblique;
 }
 
-#bp{
+.bp{
 	color: #f5f298;;
-	font-style: oblique;
 }
 
-#pan{
+.pan{
 	color: #ff6961;;
-	font-style: oblique;
 }
 
 
