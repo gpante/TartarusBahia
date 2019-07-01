@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tartarus Bahia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+        <h1>Tartarus Bahia</h1>
+  </div> 
+<div class="topnav">
+     <a class="active" href="#home">Home</a>
+     <a href="#news">Campaign Journal</a>
+     <a href="#contact">Ecologist Notes</a>
+     <a href="#about">Characters</a>
+</div>
+<div id="cover">
+    <div id="cover-text">
+        Tartarus Bahia
+        <div id="cover-subtext">A Campaign</div>
+    </div>
+</div>
+
+
+
+<body>
+<div id="intro">
+  <br><br><br><div>
+  An adventure led by a <span id="lrrr">battleworn dwarf</span>, <span id="azura">a misunderstood drow</span>, <span id="torryn">a w!ld dragonborn</span>, <span id="pan">an alcoholic tiefling</span>, and <span id="bp">a musical aarakocra</span>.
+  </div><br><br><br>
+  <div class="hideme">
+  Join and follow along as they travel the untamed lands of Astera: a land of fearsome beasts and magnificent landscapes. All of which strike a stark contrast with the fortified constructions of its new settlers.
+  </div><br><br><br>
+  <div class="hideme">
+  For the first time in generations, the beasts have become bolder and more aggressive. Could they be reclaiming their lost territory? Or is this the beginnings of greater machinations? 
+  </div><br><br><br><br><br>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+  // When the user scrolls the page, execute scrollProg 
+window.onscroll = function() {scrollProg()};
+
+function scrollProg() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+/* Fade in scrollProg */
+$(document).scroll(function () {
+    var y = $(this).scrollTop();
+    if (y > 350) {
+        $('.progress-container').fadeIn();
+        $('#scover').fadeOut();
+    } else {
+        $('.progress-container').fadeOut();
+        $('#cover').fadeIn();
+    }
+
+});
+/* Fade in Text ***************************************** */
+
+$(function(){  // $(document).ready shorthand
+  $('.monster').fadeIn('slow');
+});
+$(document).ready(function() {
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){   
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            var top_of_object = $(this).position().top;
+            var top_of_window = $(window).scrollTop();
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > top_of_object+($(window).height())){
+                $(this).animate({'opacity':'1'},1000);
+            }
+        }); 
+    });
+});
+</script>
+</body>
+</html>
