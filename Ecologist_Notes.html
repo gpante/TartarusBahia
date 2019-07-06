@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tartarus Bahia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/turtle.png">
+</head>
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+        <h1>Tartarus Bahia</h1>
+  </div> 
+<div class="topnav">
+     <a href="index.html">Home</a>
+     <a href="Journal_8.html">Campaign Journal</a>
+     <a class="active">Ecologist Notes</a>
+     <a href="Characters.html">Characters</a>
+     <a href="Maps.html">Maps</a>
+</div>
+<div id="cover">
+    <div id="cover-text" style="">
+        Tartarus Bahia
+        <div id="cover-subtext">A Campaign</div>
+    </div>
+</div>
+
+
+
+<body>
+<div></div><br><br>
+<div id="intro">
+  <div style="text-align: center; font-size: 4em">
+  <div style="text-align: center; width: 100%">
+    To be released soon. </div>
+    <div>
+    <span style="color: black; size: 2px">Narrowly escaping the dreamscape labyrinth, our adventurers have discovered a subterranean passage. Lined along it's dark walls are deposits of mithril and moonstone, and at the other end lies the comforting glow of the moon itself. </span> 
+  </div>
+  </div><br>
+  <img src="images/End.png" style="max-width: 15%; display: block; margin: 0 auto"><br>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+  // When the user scrolls the page, execute scrollProg 
+window.onscroll = function() {scrollProg()};
+
+function scrollProg() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+/* Fade in scrollProg */
+$(document).scroll(function () {
+    var y = $(this).scrollTop();
+    if (y > 350) {
+        $('.progress-container').fadeIn();
+        $('#scover').fadeOut();
+    } else {
+        $('.progress-container').fadeOut();
+        $('#cover').fadeIn();
+    }
+
+});
+/* Fade in Text ***************************************** */
+
+$(function(){  // $(document).ready shorthand
+  $('.monster').fadeIn('slow');
+});
+$(document).ready(function() {
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){   
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            var top_of_object = $(this).position().top;
+            var top_of_window = $(window).scrollTop();
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > top_of_object+($(window).height())){
+                $(this).animate({'opacity':'1'},1000);
+            }
+        }); 
+    });
+});
+</script>
+</body>
+</html>
