@@ -35,6 +35,7 @@ body div {
 
 .quote{
 	font-style: oblique;
+	text-orientation: center;
 }
 .lrrr {
 	color: #ffb347;
@@ -54,6 +55,10 @@ body div {
 
 .pan{
 	color: #ff6961;;
+}
+
+.varum{
+	color: #ffD700;
 }
 
 
